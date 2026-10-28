@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanmay Dafe — Full-Stack Engineer · Android, Web &amp; AI Systems</title>
+  <meta name="description"
+    content="Portfolio of Tanmay Dafe — Full-Stack Engineer from Nagpur specializing in Native Android (Kotlin & Java), production web deployment (smartcampus.site), and applied AI architectures (Python & Gemini API). B.Tech IT at SVPCET (CGPA 8+)." />
+  <meta name="keywords"
+    content="Tanmay Dafe, Android Developer, Full Stack Web, smartcampus.site, AI Engineer, Kotlin, Java, PHP, MySQL, Nagpur, SVPCET, Portfolio" />
+  <meta name="author" content="Tanmay Dafe" />
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Tanmay Dafe — Full-Stack Engineer · Android, Web &amp; AI Systems" />
+  <meta property="og:description"
+    content="Native Android applications, production web platforms (smartcampus.site), and applied AI systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/img/avatar1.jpg" />
+
+  <!-- Google Fonts: Space Grotesk, Onest, Fragment Mono, Instrument Serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Instrument+Serif:ital@1&family=Onest:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="icon" type="image/png" sizes="128x128" href="/favicon.png?v=3" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+  <link rel="apple-touch-icon" href="/favicon.png?v=3" />
+  <link rel="shortcut icon" href="/favicon.png?v=3" />
+</head>
+
+<body>
+
+  <!-- High-End Film Grain Canvas Overlay (Awwwards / Apple Cinematic feel) -->
+  <div class="luxury-grain-overlay" aria-hidden="true"></div>
+
+  <!-- Dynamic Global Cursor Spotlight (Linear/Stripe style) -->
+  <div class="cursor-spotlight" id="cursorSpotlight" aria-hidden="true"></div>
+
+  <!-- Precision Custom Cursor (Desktop Only) -->
+  <div class="luxury-cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="luxury-cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Ambient Dynamic Particle Mesh Canvas -->
+  <canvas id="cyberCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- ── Floating Dynamic Island Nav HUD ────────────────────────────── -->
+  <header class="hud-nav-wrap">
+    <nav class="hud-nav glass" aria-label="Main Navigation">
+      <a href="#hero" class="nav-brand magnetic-element">
+        <span class="nav-avatar-ring">
+          <img src="/img/avatar1.jpg" alt="Tanmay Dafe" class="nav-avatar-img" />
+          <span class="live-status-dot" title="Status: Active &amp; Ready to Build"></span>
+        </span>
+        <span class="nav-brand-text" id="navBrandName">Tanmay Dafe</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#flagship" class="magnetic-element">Featured</a></li>
+        <li><a href="#projects" class="magnetic-element">Projects</a></li>
+        <li><a href="#bento" class="magnetic-element">Stack &amp; Experience</a></li>
+        <li><a href="#github" class="magnetic-element">GitHub</a></li>
+        <li><a href="#simulator" class="magnetic-element">Workbench</a></li>
+        <li><a href="#contact" class="magnetic-element">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Command Palette Trigger (⌘K) -->
+        <button type="button" class="cmd-trigger-btn magnetic-element" data-open-cmd aria-label="Open Command Menu"
+          title="Press ⌘K or Ctrl+K">
+          <span class="cmd-icon-svg">⌘</span>
+          <span class="cmd-label">K</span>
+        </button>
+
+        <!-- Ambient Lo-Fi Beats Toggle -->
+        <button type="button" class="nav-icon-btn magnetic-element" id="lofiQuickToggle" onclick="window.toggleLoFiBeats?.()"
+          title="Toggle Ambient Coding Synth">
+          <svg viewBox="0 0 24 24" class="nav-svg">
+            <path fill="currentColor"
+              d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+          </svg>
+        </button>
+
+        <!-- Sound FX Toggle -->
+        <button type="button" class="nav-icon-btn magnetic-element" id="soundToggleBtn" aria-label="Toggle Sound Effects">
+          <svg viewBox="0 0 24 24" class="nav-svg">
+            <path fill="currentColor"
+              d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+          </svg>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button type="button" class="nav-icon-btn magnetic-element" id="themeToggleBtn" aria-label="Toggle Theme"
+          title="Toggle Dark/Light Mode">
+          <svg viewBox="0 0 24 24" class="nav-svg">
+            <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" />
+          </svg>
+        </button>
+
+        <!-- Connect CTA -->
+        <a href="#contact" class="nav-cta-btn magnetic-element">Connect ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ── Main Content ────────────────────────────────────────────────── -->
+  <main>
+
+    <!-- ◦ Hero Section ◦ -->
+    <section id="hero" class="hero-section">
+      <div class="hero-glow-ambient" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <!-- Luxury Status Pill with Edge Ping -->
+        <div class="hero-status-pill glass luxury-badge">
+          <span class="status-pulse-dot"></span>
+          <span id="heroStatusBadge">Available for Android, Full-Stack Web &amp; AI Roles</span>
+          <span class="luxury-ping-badge font-mono">18ms Ping</span>
+        </div>
+
+        <!-- Hero Avatar with Conic Gyro Rim -->
+        <div class="hero-avatar-wrapper">
+          <div class="hero-avatar-card">
+            <img src="/img/avatar1.jpg" alt="Tanmay Dafe" class="hero-avatar-photo" />
+            <div class="hero-avatar-scanline" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <p class="hero-kicker font-mono">
+          <span class="kicker-tag" id="heroKickerText">Tanmay Dafe · Full-Stack Engineer (Android · Web · AI)</span>
+        </p>
+
+        <h1 class="hero-title">
+          <span class="hero-line">Hi, I'm <span class="text-luxury-shimmer" id="heroName">Tanmay</span>.</span>
+          <span class="hero-line">I architect scalable <span class="rotator-container"><em class="rot-word"
+                id="rotWord">Android apps.</em></span></span>
+        </h1>
+
+        <p class="hero-bio" id="heroBio">
+          B.Tech Information Technology student at St. Vincent Pallotti College of Engineering &amp; Technology, Nagpur
+          . Experienced in native Android engineering (Java &amp; Kotlin), production web deployment
+          (smartcampus.site, PHP, MySQL), and applied AI architectures (Python, Gemini API &amp; Data Analytics).
+          Full-Stack Android Intern at Mountreach Solutions.
+        </p>
+
+        <!-- Hero Actions -->
+        <div class="hero-actions">
+          <button type="button" class="btn btn-accent magnetic-element" onclick="window.openAiCopilot?.()">
+            <span class="btn-icon">🤖</span> Ask Tanmay's AI Agent
+          </button>
+          <a href="https://smartcampus.site.je/?i=1" target="_blank" rel="noopener noreferrer" class="btn btn-glass magnetic-element">
+            <span class="pulse-dot"></span> Visit smartcampus.site ↗
+          </a>
+          <a href="#simulator" class="btn btn-glass magnetic-element">Interactive Workbench 💻</a>
+          <a href="/Tanmay_Dafe_Resume.pdf" download="Tanmay_Dafe_Resume.pdf" class="btn btn-ghost font-mono magnetic-element">
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 4v12m0 0-4-4m4 4 4-4M4 20h16" />
+            </svg>
+            Resume (PDF)
+          </a>
+        </div>
+
+        <!-- Real-Time Telemetry Bar -->
+        <div class="hero-telemetry font-mono glass">
+          <div class="telem-item">
+            <span class="telem-label">COORDINATES &amp; TIME</span>
+            <span class="telem-val">21.14°N, 79.08°E · <span id="liveClock">--:--:--</span> IST</span>
+          </div>
+          <div class="telem-divider"></div>
+          <div class="telem-item">
+            <span class="telem-label">TRI-STACK ARCHITECTURE</span>
+            <span class="telem-val text-accent">Android Native · Web · Applied AI</span>
+          </div>
+          <div class="telem-divider"></div>
+          <div class="telem-item">
+            <span class="telem-label">ACADEMIC DISTINCTION</span>
+            <span class="telem-val">SVPCET · CGPA 8+ </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ◦ Flagship: Production Deployed Platform (smartcampus.site) ◦ -->
+    <section id="flagship" class="section-container">
+      <div class="section-head reveal-up">
+        <div>
+          <span class="section-tag font-mono">01 // LIVE PRODUCTION DEPLOYMENT</span>
+          <h2 class="section-title">Shipped <em>smartcampus.site.je</em>.</h2>
+        </div>
+        <p class="section-lede">Centralized campus issue &amp; facility management portal with real-time complaint tracking, student portals, and admin dashboards.</p>
+      </div>
+
+      <div class="flagship-card glass reveal-up">
+        <div class="flagship-info">
+          <div class="flagship-badge font-mono">Live Cloud Web Platform · smartcampus.site.je</div>
+          <h3 class="flagship-name">Smart Campus Issue &amp; Facility Management</h3>
+          <p class="flagship-desc">
+            Engineered and deployed live to production at <strong>https://smartcampus.site.je/?i=1</strong>. Built as a centralized digital portal for reporting, tracking, and resolving campus facility, Wi-Fi, classroom, and electrical problems with role-based student and admin workflows.
+          </p>
+
+          <div class="flagship-points">
+            <div class="f-point">
+              <span class="f-point-num">01</span>
+              <div>
+                <h4>Live at smartcampus.site.je/?i=1</h4>
+                <p>Equipped with cloud hosting, SSL encryption, and instant issue tracking for campus students and faculty.</p>
+              </div>
+            </div>
+            <div class="f-point">
+              <span class="f-point-num">02</span>
+              <div>
+                <h4>Dual Portals: Student &amp; Admin Dashboard</h4>
+                <p>Dedicated Student Sign-In portal for complaint submission alongside an Administrator Dashboard with technician assignment and CSV exports.</p>
+              </div>
+            </div>
+            <div class="f-point">
+              <span class="f-point-num">03</span>
+              <div>
+                <h4>Native Android Mobile Synchronization</h4>
+                <p>Directly synchronized with native Android app (Java + XML in SmartCampus/android-app/) for real-time mobile push notifications.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flagship-links">
+            <a href="https://smartcampus.site.je/?i=1" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm">
+              Visit Live smartcampus.site.je ↗
+            </a>
+            <a href="#simulator" class="btn btn-glass btn-sm">Launch Interactive Workbench ⚡</a>
+            <button type="button" class="btn btn-ghost btn-sm font-mono"
+              onclick="window.inspectProject('smartcampus-site')">Inspect Blueprint ↗</button>
+          </div>
+        </div>
+
+        <div class="flagship-preview">
+          <div class="flagship-mockup glass">
+            <div class="mockup-header">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="mockup-title font-mono">https://smartcampus.site.je/?i=1</span>
+              <a href="https://smartcampus.site.je/?i=1" target="_blank" rel="noopener noreferrer" class="mockup-live-pill font-mono">LIVE ↗</a>
+            </div>
+            <div class="mockup-img-container">
+              <img src="/img/project_smartcampus.svg" alt="Smart Campus Live Portal Preview" class="flagship-real-img" />
+              <a href="https://smartcampus.site.je/?i=1" target="_blank" rel="noopener noreferrer" class="mockup-hover-overlay">
+                <span class="btn btn-accent btn-sm">Open Live Website ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ◦ Interactive Multi-Domain Workbench (Android + Web + AI) ◦ -->
+    <section id="simulator" class="section-container">
+      <div class="section-head reveal-up">
+        <div>
+          <span class="section-tag font-mono">02 // MULTI-STACK WORKBENCH</span>
+          <h2 class="section-title">Interactive <em>Device &amp; Web Simulator</em>.</h2>
+        </div>
+        <p class="section-lede">
+          Experience Tanmay's multi-disciplinary engineering live. Switch between his deployed
+          <strong>smartcampus.site.je</strong> web portal, native Android apps, Applied AI document copilot, and backend
+          REST telemetry!
+        </p>
+      </div>
+
+      <div class="simulator-wrapper glass reveal-up" id="androidSimulator">
+        <!-- Control Tabs -->
+        <div class="sim-phone-tabs font-mono">
+          <button type="button" class="sim-phone-tab is-on" id="simTabSmartcampus">🌐 smartcampus.site.je</button>
+          <button type="button" class="sim-phone-tab" id="simTabCorrespondence">🏛️ Inward &amp; Outward</button>
+          <button type="button" class="sim-phone-tab" id="simTabElearning">📱 E-Learning Android</button>
+          <button type="button" class="sim-phone-tab" id="simTabWhatsapp">💬 WhatsApp Clone</button>
+          <button type="button" class="sim-phone-tab" id="simTabAi">🤖 Applied AI Copilot</button>
+          <button type="button" class="sim-phone-tab" id="simTabTelemetry">⚡ REST &amp; MySQL Telemetry</button>
+        </div>
+
+        <!-- Smartphone Chassis -->
+        <div class="phone-chassis">
+          <div class="phone-screen" id="phoneScreenContent"></div>
+          <div class="phone-chin-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ◦ Spatial 3D Horizontal Showcase ◦ -->
+    <section id="projects" class="section-container spatial-section-wrap">
+      <div class="section-head reveal-up">
+        <div>
+          <span class="section-tag font-mono">02 // SPATIAL SHOWCASE</span>
+          <h2 class="section-title">Applications I've <em>engineered</em>.</h2>
+        </div>
+        <p class="section-lede">
+          Traverse Tanmay's production web platforms, native Android applications, and applied AI systems in high-tech spatial perspective. Scroll down to glide sideways through each architecture.
+        </p>
+      </div>
+
+      <!-- Spatial Pinned Horizontal Gallery -->
+      <div class="spatial-hscroll" id="spatialHscroll">
+        <div class="spatial-pin" id="spatialPin">
+          <!-- Cyber HUD Telemetry Header -->
+          <div class="spatial-hud font-mono">
+            <div class="spatial-hud-left">
+              <span class="spatial-radar-dot"></span>
+              <span class="spatial-active-domain" id="spatialActiveDomain">Full-Stack Web · Live Deployed 🚀</span>
+            </div>
+
+            <!-- Category Filter Capsules -->
+            <div class="spatial-filter-capsules" id="spatialFilterCapsules">
+              <button type="button" class="spatial-capsule is-active" data-cat="all">All Systems (5)</button>
+              <button type="button" class="spatial-capsule" data-cat="Web">Web 🌐</button>
+              <button type="button" class="spatial-capsule" data-cat="Android">Android 📱</button>
+              <button type="button" class="spatial-capsule" data-cat="AI">AI 🤖</button>
+            </div>
+
+            <!-- Scrub Progress & Counter -->
+            <div class="spatial-hud-right">
+              <div class="spatial-scrub-bar">
+                <div class="spatial-scrub-fill" id="spatialScrubFill"></div>
+              </div>
+              <div class="spatial-counter"><span id="spatialCurrentNum">01</span> / <span id="spatialTotalNum">05</span></div>
+            </div>
+          </div>
+
+          <!-- Pinned Viewport Stage with 3D Depth -->
+          <div class="spatial-stage-viewport" id="spatialViewport">
+            <!-- Radial Stage Ambient Glow -->
+            <div class="spatial-ambient-glow" aria-hidden="true"></div>
+            
+            <div class="spatial-track" id="spatialTrack">
+              <!-- Rendered dynamically by main.js -->
+            </div>
+          </div>
+
+          <!-- Bottom Spatial Nav Hints & Quick Arrows -->
+          <div class="spatial-footer font-mono">
+            <div class="spatial-hint-text">
+              <span class="pulse-dot"></span>
+              <span>Scroll vertically to glide sideways · Drag track or click arrows</span>
+            </div>
+
+            <div class="spatial-arrow-controls">
+              <button type="button" class="spatial-arrow-btn" id="spatialPrevBtn" aria-label="Previous Project" title="Previous (←)">
+                <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="spatial-arrow-btn" id="spatialNextBtn" aria-label="Next Project" title="Next (→)">
+                <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ◦ Bento Grid: The Tri-Stack Matrix ◦ -->
+    <section id="bento" class="section-container">
+      <div class="section-head reveal-up">
+        <div>
+          <span class="section-tag font-mono">03 // TRI-STACK MATRIX</span>
+          <h2 class="section-title">Android, Web &amp; <em>AI Credentials</em>.</h2>
+        </div>
+        <p class="section-lede">Organized into three distinct engineering disciplines alongside verified academic
+          milestones.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Bento 1: Technical Stack Matrix -->
+        <div class="bento-card bento-wide glass reveal-up">
+          <div class="bento-card-header">
+            <span class="bento-icon">⚡</span>
+            <div>
+              <h3 class="bento-title">Core Engineering &amp; Language Matrix</h3>
+              <p class="bento-sub">Spanning Native Mobile, Full-Stack Web Services, and AI Data Analytics.</p>
+            </div>
+          </div>
+          <div class="bento-tech-pills">
+            <!-- Mobile -->
+            <div class="tech-pill"><span class="tech-dot dot-green"></span>Kotlin (Android)</div>
+            <div class="tech-pill"><span class="tech-dot dot-green"></span>Java &amp; Advance Java</div>
+            <div class="tech-pill"><span class="tech-dot dot-green"></span>Android Studio &amp; XML</div>
+            <!-- Web -->
+            <div class="tech-pill"><span class="tech-dot dot-blue"></span>smartcampus.site.je</div>
+            <div class="tech-pill"><span class="tech-dot dot-blue"></span>PHP &amp; MySQL</div>
+            <div class="tech-pill"><span class="tech-dot dot-blue"></span>JavaScript &amp; HTML5/CSS3</div>
+            <div class="tech-pill"><span class="tech-dot dot-blue"></span>REST APIs</div>
+            <!-- AI -->
+            <div class="tech-pill"><span class="tech-dot dot-purple"></span>Python &amp; Gemini API</div>
+            <div class="tech-pill"><span class="tech-dot dot-purple"></span>Data Analytics (AICTE)</div>
+            <div class="tech-pill"><span class="tech-dot dot-purple"></span>IIT Madras Algorithms</div>
+            <div class="tech-pill"><span class="tech-dot dot-yellow"></span>C &amp; C++</div>
+            <div class="tech-pill"><span class="tech-dot dot-green"></span>Git &amp; GitHub</div>
+          </div>
+        </div>
+
+        <!-- Bento 2: Academic Milestones (SVPCET & Govt Polytechnic) -->
+        <div class="bento-card glass reveal-up">
+          <div class="bento-card-header">
+            <span class="bento-icon">🎓</span>
+            <div>
+              <h3 class="bento-title">Academic Foundations</h3>
+              <p class="bento-sub">Consistent high academic distinction.</p>
+            </div>
+          </div>
+          <div class="timeline-list" id="bentoEduList"></div>
+        </div>
+
+        <!-- Bento 3: Work Experience / Mountreach Solutions -->
+        <div class="bento-card glass reveal-up">
+          <div class="bento-card-header">
+            <span class="bento-icon">💼</span>
+            <div>
+              <h3 class="bento-title">Work Experience</h3>
+              <p class="bento-sub">Active industrial software development.</p>
+            </div>
+          </div>
+          <div class="timeline-list" id="bentoExpList"></div>
+        </div>
+
+        <!-- Bento 4: Certifications (AICTE & IIT Madras NPTEL) -->
+        <div class="bento-card bento-wide glass reveal-up">
+          <div class="bento-card-header">
+            <span class="bento-icon">📜</span>
+            <div>
+              <h3 class="bento-title">Verified Certifications (Algorithms &amp; Analytics)</h3>
+              <p class="bento-sub">IIT Madras NPTEL and AICTE EduSkills verified credentials.</p>
+            </div>
+          </div>
+          <div class="achievements-list" id="bentoCertList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ◦ GitHub Engineering Activity & Open Source Contributions ◦ -->
+    <section id="github" class="section-container">
+      <div class="section-head reveal-up">
+        <div>
+          <span class="section-tag font-mono">04 // CODE VELOCITY &amp; GIT METRICS</span>
+          <h2 class="section-title">Verified <em>GitHub Activity</em>.</h2>
+        </div>
+        <p class="section-lede">
+          Consistent engineering cadence across production web platforms, native Android codebases, full-stack microservices, and applied AI systems.
+        </p>
+      </div>
+
+      <!-- GitHub Metrics Stat Cards -->
+      <div class="github-stats-grid reveal-up">
+        <div class="gh-stat-card glass">
+          <div class="gh-stat-top">
+            <span class="gh-stat-icon">🔥</span>
+            <span class="gh-badge font-mono">2025–2026</span>
+          </div>
+          <div class="gh-stat-num stat-counter" id="ghTotalCommits">1,248</div>
+          <div class="gh-stat-label">Contributions in Past Year</div>
+        </div>
+        <div class="gh-stat-card glass">
+          <div class="gh-stat-top">
+            <span class="gh-stat-icon">⚡</span>
+            <span class="gh-badge font-mono">Active</span>
+          </div>
+          <div class="gh-stat-num" id="ghLongestStreak">48 days</div>
+          <div class="gh-stat-label">Longest Continuous Streak</div>
+        </div>
+        <div class="gh-stat-card glass">
+          <div class="gh-stat-top">
+            <span class="gh-stat-icon">📦</span>
+            <span class="gh-badge font-mono">Repositories</span>
+          </div>
+          <div class="gh-stat-num">18+ Repos</div>
+          <div class="gh-stat-label">Production &amp; Native Apps</div>
+        </div>
+        <div class="gh-stat-card glass">
+          <div class="gh-stat-top">
+            <span class="gh-stat-icon">🚀</span>
+            <span class="gh-badge font-mono text-accent">Production</span>
+          </div>
+          <div class="gh-stat-num">smartcampus.site</div>
+          <div class="gh-stat-label">Live Cloud University Portal</div>
+        </div>
+      </div>
+
+      <!-- Contribution Calendar Heatmap Card -->
+      <div class="gh-calendar-card glass reveal-up">
+        <div class="gh-calendar-header">
+          <div class="gh-user-badge">
+            <div class="gh-avatar-circle">
+              <svg viewBox="0 0 24 24" class="gh-svg" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="gh-handle">github.com/tanmaydafe</div>
+              <div class="gh-status-note">Active Commits · Verified Engineering Profile</div>
+            </div>
+          </div>
+          <div class="gh-tooltip font-mono" id="ghTooltip">Hover over any square to inspect commits</div>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm">
+            Follow on GitHub ↗
+          </a>
+        </div>
+
+        <!-- 52-week Grid Scrollable Wrapper -->
+        <div class="gh-grid-wrapper">
+          <div class="gh-months font-mono">
+            <span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span>
+          </div>
+          <div class="gh-grid-layout">
+            <div class="gh-days font-mono">
+              <span>Mon</span><span>Wed</span><span>Fri</span>
+            </div>
+            <div class="gh-grid" id="ghGrid"></div>
+          </div>
+        </div>
+
+        <!-- Legend & Stats Footer -->
+        <div class="gh-calendar-footer font-mono">
+          <div class="gh-lang-tags">
+            <span class="gh-lang-tag"><i class="lang-dot dot-kotlin"></i> Kotlin 42%</span>
+            <span class="gh-lang-tag"><i class="lang-dot dot-java"></i> Java 28%</span>
+            <span class="gh-lang-tag"><i class="lang-dot dot-web"></i> PHP &amp; JS 18%</span>
+            <span class="gh-lang-tag"><i class="lang-dot dot-python"></i> Python 12%</span>
+          </div>
+          <div class="gh-legend">
+            <span>Less</span>
+            <span class="gh-cell lvl-0"></span>
+            <span class="gh-cell lvl-1"></span>
+            <span class="gh-cell lvl-2"></span>
+            <span class="gh-cell lvl-3"></span>
+            <span class="gh-cell lvl-4"></span>
+            <span>More</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ◦ Marquee Crossing Ribbons ◦ -->
+    <div class="marquee-ribbons-section" aria-hidden="true">
+      <div class="ribbon ribbon-accent">
+        <div class="ribbon-track" id="ribbonTrackA"></div>
+      </div>
+      <div class="ribbon ribbon-subtle">
+        <div class="ribbon-track ribbon-reverse" id="ribbonTrackB"></div>
+      </div>
+    </div>
+
+    <!-- ◦ Engineering Principles ◦ -->
+    <section id="principles" class="section-container">
+      <div class="section-head reveal-up">
+        <div>
+          <span class="section-tag font-mono">06 // ENGINEERING CRAFT</span>
+          <h2 class="section-title">Development <em>Principles</em>.</h2>
+        </div>
+        <p class="section-lede">Core architectural rules that guide every Android layout, web endpoint, and AI query.
+        </p>
+      </div>
+      <div class="principles-grid" id="principlesGrid"></div>
+    </section>
+
+    <!-- ◦ Ambient Lo-Fi Beats Widget ◦ -->
+    <div class="section-container">
+      <div class="lofi-widget glass reveal-up" id="lofiWidget">
+        <div class="lofi-disc" id="lofiVinylDisc" aria-hidden="true">
+          <div class="disc-groove"></div>
+          <div class="disc-center"></div>
+        </div>
+        <div class="lofi-details">
+          <div class="lofi-badge font-mono">
+            <span class="lofi-eq-bars" id="lofiEqBars"><i></i><i></i><i></i><i></i></span>
+            <span id="lofiStatus">Ambient Lo-Fi Synth (Offline)</span>
+          </div>
+          <h3 class="lofi-title">Coding Atmosphere Synthesizer</h3>
+          <p class="lofi-desc">Procedural Web Audio synthesizer generating relaxing Rhodes electric chords and analog
+            pulses.</p>
+        </div>
+        <button type="button" class="btn btn-accent btn-sm" id="lofiPlayBtn">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ◦ 16x16 Pixel Art Guestbook ◦ -->
+    <section id="guestbook" class="section-container">
+      <div class="section-head reveal-up">
+        <div>
+          <span class="section-tag font-mono">07 // VISITOR WALL</span>
+          <h2 class="section-title">Leave a <em>pixel mark</em>.</h2>
+        </div>
+        <p class="section-lede">Draw a 16×16 retro digital doodle, sign your name, and become part of this portfolio's
+          guestbook wall.</p>
+      </div>
+
+      <div class="guestbook-layout">
+        <!-- Canvas Form -->
+        <div class="gb-editor-card glass reveal-up">
+          <canvas id="gbCanvas" width="320" height="320" aria-label="16 by 16 drawing canvas"></canvas>
+
+          <!-- Palette -->
+          <div class="gb-palette-wrap" id="gbPalette" role="radiogroup" aria-label="Color Palette"></div>
+
+          <!-- Actions -->
+          <div class="gb-input-row">
+            <input type="text" id="gbName" class="gb-name-input" placeholder="Your name or handle..." maxlength="24" />
+            <button type="button" class="btn btn-accent btn-sm" id="gbSubmit">Sign Wall ↗</button>
+          </div>
+
+          <div class="gb-secondary-tools font-mono">
+            <button type="button" class="link-btn" id="gbUndo">↺ Undo</button>
+            <button type="button" class="link-btn" id="gbClear">Clear</button>
+            <button type="button" class="link-btn" id="gbExport">Download PNG 💾</button>
+          </div>
+        </div>
+
+        <!-- Community Signatures Wall -->
+        <div class="gb-wall-wrap reveal-up">
+          <h3 class="gb-wall-title font-mono">Digital Guestbook Signatures</h3>
+          <div class="gb-wall-grid" id="gbWall"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ◦ Contact & Footer Section ◦ -->
+    <footer id="contact" class="footer-section">
+      <div class="footer-inner">
+        <span class="section-tag font-mono">08 // LET'S CONNECT</span>
+        <h2 class="footer-title">Let's build something <em>impactful</em>.</h2>
+        <p class="footer-lede">
+          Have an Android application, a full-stack web portal, an AI requirement, or an opportunity in mind? I reply
+          within 24 hours.
+        </p>
+
+        <!-- Direct Contact Info Cards -->
+        <div class="direct-contact-cards reveal-up">
+          <div class="contact-pill-card glass">
+            <span class="font-mono text-muted">DIRECT EMAIL</span>
+            <div class="email-row">
+              <code class="email-code">tanmaydafe855@gmail.com</code>
+              <button type="button" class="btn btn-accent btn-sm" id="copyEmailBtn">Copy Email 📋</button>
+            </div>
+          </div>
+
+          <div class="contact-pill-card glass">
+            <span class="font-mono text-muted">PHONE &amp; WHATSAPP</span>
+            <div class="email-row">
+              <code class="email-code">+91 9175181390</code>
+              <a href="https://wa.me/919175181390" target="_blank" rel="noopener noreferrer"
+                class="btn btn-glass btn-sm">Chat on WhatsApp ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Contact Form -->
+        <form class="contact-form glass reveal-up" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">Name</label>
+              <input type="text" id="contactName" required placeholder="Your Name" />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" required placeholder="you@company.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message / Project Inquiry</label>
+            <textarea id="contactMessage" rows="4" required
+              placeholder="Tell me about the Android app, full-stack web project, or AI requirement..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent">Send Message 🚀</button>
+        </form>
+
+        <!-- Social Media & Resume Links -->
+        <div class="footer-socials font-mono">
+          <a href="https://smartcampus.site.je" target="_blank" rel="noopener noreferrer">smartcampus.site ↗</a>
+          <a href="mailto:tanmaydafe855@gmail.com">Email ↗</a>
+          <a href="tel:+919175181390">Call ↗</a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="/Tanmay_Dafe_Resume.pdf" download="Tanmay_Dafe_Resume.pdf">Resume (PDF) ↗</a>
+        </div>
+
+        <div class="footer-legal font-mono">
+          <span>© 2026 Tanmay Dafe · St. Vincent Pallotti College of Engineering &amp; Technology, Nagpur</span>
+          <span>Android Native · Full-Stack Web · Applied AI</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ── Floating AI Copilot Trigger Dock ───────────────────────────── -->
+  <aside class="floating-ai-dock" aria-label="AI Assistant Dock">
+    <button type="button" class="ai-dock-btn glass" id="aiTriggerBtn" title="Ask Tanmay's AI Copilot">
+      <span class="ai-dock-beacon"></span>
+      <span class="ai-dock-icon">🤖</span>
+      <span class="ai-dock-text">Ask Tanmay's AI</span>
+    </button>
+  </aside>
+
+  <!-- ── Modal: Spotlight Command Palette (⌘K) ──────────────────────── -->
+  <div id="cmdPaletteModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Command Palette">
+    <div class="cmd-palette-panel glass">
+      <div class="cmd-input-bar">
+        <span class="cmd-search-icon">🔍</span>
+        <input type="text" id="cmdInput" placeholder="Type a command or jump to section..." autocomplete="off" />
+        <button type="button" id="cmdClose" class="cmd-close-btn" aria-label="Close">✕</button>
+      </div>
+      <ul class="cmd-list" id="cmdList"></ul>
+      <div class="cmd-footer-tips font-mono">
+        <span><kbd>↑</kbd> <kbd>↓</kbd> Navigate</span>
+        <span><kbd>↵</kbd> Select</span>
+        <span><kbd>ESC</kbd> Close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Modal: Interactive AI Copilot Assistant ────────────────────── -->
+  <div id="aiAssistantModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="AI Copilot Assistant">
+    <div class="ai-modal-panel glass">
+      <div class="ai-modal-head">
+        <div class="ai-head-info">
+          <span class="ai-head-icon">🤖</span>
+          <div>
+            <h3 class="ai-head-title">Tanmay's AI Copilot</h3>
+            <span class="ai-head-sub font-mono"><span class="pulse-dot"></span> Online · Grounded Knowledge</span>
+          </div>
+        </div>
+        <button type="button" id="aiClose" class="modal-close-btn" aria-label="Close">✕</button>
+      </div>
+
+      <div class="ai-chat-log" id="aiChatLog"></div>
+      <div class="ai-quick-pills" id="aiQuickPills"></div>
+
+      <div class="ai-input-bar">
+        <input type="text" id="aiInput" placeholder="Ask about smartcampus.site, Android apps, or AI..."
+          autocomplete="off" />
+        <button type="button" id="aiSend" class="btn btn-accent btn-sm">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Modal: Architecture Blueprint Inspector ────────────────────── -->
+  <div id="projectInspectorModal" class="modal-backdrop" role="dialog" aria-modal="true"
+    aria-label="Architecture Inspector">
+    <div class="inspector-panel glass">
+      <button type="button" id="inspectorClose" class="modal-close-btn" aria-label="Close">✕</button>
+      <div id="inspectorBody"></div>
+    </div>
+  </div>
+
+  <!-- ── Toast Notification Bar ──────────────────────────────────────── -->
+  <div id="toastNotification" class="toast-bar glass font-mono" role="status" aria-live="polite"></div>
+
+  <!-- Main JavaScript Bundle -->
+  <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>
