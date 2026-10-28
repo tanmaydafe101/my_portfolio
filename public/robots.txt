@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tanmaydafeportfolio.vercel.app/sitemap.xml
+
