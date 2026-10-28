@@ -174,7 +174,7 @@ function copyEmail(email) {
 function downloadResume(url) {
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'Shaurya_Verma_Resume.pdf';
+  a.download = 'Tanmay_Dafe_Resume.pdf';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
