@@ -549,6 +549,7 @@ function initBentoInteractions() {
 function initContactForm() {
   const form = document.getElementById('contactForm');
   const copyBtn = document.getElementById('copyEmailBtn');
+  const submitBtn = form?.querySelector('button[type="submit"]');
 
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
@@ -560,11 +561,69 @@ function initContactForm() {
   }
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      sound.playChime();
-      window.showToast?.('Message sent! Tanmay will get in touch shortly.');
-      form.reset();
+
+      const name = document.getElementById('contactName')?.value.trim();
+      const email = document.getElementById('contactEmail')?.value.trim();
+      const message = document.getElementById('contactMessage')?.value.trim();
+
+      if (!name || !email || !message) {
+        window.showToast?.('⚠️ Please fill out all fields before sending.');
+        return;
+      }
+
+      const origBtnHtml = submitBtn ? submitBtn.innerHTML : 'Send Message 🚀';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>Sending to Tanmay... ⏳</span>`;
+      }
+
+      try {
+        // Direct API delivery to Tanmay Dafe's verified email inbox
+        const response = await fetch("https://formsubmit.co/ajax/tanmaydafe855@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            message: message,
+            _subject: `Portfolio Message from ${name} (${email})`,
+            _template: "table",
+            _captcha: "false"
+          })
+        });
+
+        const data = await response.json();
+
+        if (response.ok || data.success === "true" || data.success === true) {
+          try { sound?.playChime?.(); } catch (e) {}
+          if (submitBtn) {
+            submitBtn.innerHTML = `<span>✓ Message Sent to Tanmay!</span>`;
+            setTimeout(() => {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = origBtnHtml;
+            }, 3500);
+          }
+          window.showToast?.(`✓ Message delivered to tanmaydafe855@gmail.com!`);
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (err) {
+        console.warn('FormSubmit network error, using instant mailto fallback:', err);
+        // Instant guaranteed fallback: opens default mail client with exact message
+        const mailtoLink = `mailto:tanmaydafe855@gmail.com?subject=${encodeURIComponent('Portfolio Inquiry from ' + name)}&body=${encodeURIComponent('Hi Tanmay,\n\nName: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message)}`;
+        window.location.href = mailtoLink;
+        window.showToast?.('📬 Opening your email client to send to Tanmay...');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = origBtnHtml;
+        }
+      }
     });
   }
 }

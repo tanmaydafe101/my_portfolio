@@ -138,17 +138,23 @@ class SoundEngine {
   }
 
   // ── Generative Ambient Lo-Fi Beats Synthesizer ──────────────────────
-  toggleLoFi(onStatusChange) {
+  async toggleLoFi(onStatusChange) {
     this.init();
+    if (this.ctx && this.ctx.state === 'suspended') {
+      try {
+        await this.ctx.resume();
+      } catch (e) {
+        console.warn('AudioContext resume failed:', e);
+      }
+    }
+
     if (this.lofiPlaying) {
       this.stopLoFi();
       if (onStatusChange) onStatusChange(false);
       return false;
     } else {
-      if (this.muted) {
-        this.muted = false;
-        localStorage.setItem('portfolio_sound', 'on');
-      }
+      this.muted = false;
+      localStorage.setItem('portfolio_sound', 'on');
       this.startLoFi();
       if (onStatusChange) onStatusChange(true);
       return true;
@@ -170,48 +176,62 @@ class SoundEngine {
 
     const playChordStep = () => {
       if (!this.lofiPlaying || !this.ctx) return;
+      if (this.ctx.state === 'suspended') {
+        this.ctx.resume().catch(() => {});
+      }
+
       const chord = chords[this.chordIndex % chords.length];
       this.chordIndex++;
 
       const now = this.ctx.currentTime;
-      // Play warm electric piano style chord
+
+      // Play warm Rhodes electric piano style chord
       chord.forEach((freq, idx) => {
-        const osc = this.ctx.createOscillator();
+        const osc1 = this.ctx.createOscillator();
+        const osc2 = this.ctx.createOscillator();
         const filter = this.ctx.createBiquadFilter();
         const gain = this.ctx.createGain();
 
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq, now);
+        // Dual oscillators for warm analog harmonics
+        osc1.type = 'sine';
+        osc1.frequency.setValueAtTime(freq, now);
+
+        osc2.type = 'triangle';
+        osc2.frequency.setValueAtTime(freq * 0.999, now); // slight chorus detune
 
         filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(900, now);
-        filter.frequency.exponentialRampToValueAtTime(450, now + 2.2);
+        filter.frequency.setValueAtTime(1400, now);
+        filter.frequency.exponentialRampToValueAtTime(550, now + 2.5);
 
+        // Rich audible volume (comfortably audible and smooth)
         gain.gain.setValueAtTime(0.001, now);
-        gain.gain.linearRampToValueAtTime(0.045 / (chord.length * 0.8), now + 0.15 + idx * 0.03);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + 3.2);
+        gain.gain.linearRampToValueAtTime(0.12 / (chord.length * 0.75), now + 0.12 + idx * 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 3.4);
 
-        osc.connect(filter);
+        osc1.connect(filter);
+        osc2.connect(filter);
         filter.connect(gain);
         gain.connect(this.ctx.destination);
 
-        osc.start(now);
-        osc.stop(now + 3.2);
+        osc1.start(now);
+        osc2.start(now);
+        osc1.stop(now + 3.4);
+        osc2.stop(now + 3.4);
       });
 
-      // Subtle soft kick pulse
+      // Subtle soft vinyl kick & pulse
       const kickOsc = this.ctx.createOscillator();
       const kickGain = this.ctx.createGain();
-      kickOsc.frequency.setValueAtTime(110, now);
-      kickOsc.frequency.exponentialRampToValueAtTime(38, now + 0.2);
-      kickGain.gain.setValueAtTime(0.04, now);
-      kickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+      kickOsc.frequency.setValueAtTime(120, now);
+      kickOsc.frequency.exponentialRampToValueAtTime(42, now + 0.22);
+      kickGain.gain.setValueAtTime(0.09, now);
+      kickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
       kickOsc.connect(kickGain);
       kickGain.connect(this.ctx.destination);
       kickOsc.start(now);
-      kickOsc.stop(now + 0.2);
+      kickOsc.stop(now + 0.22);
 
-      this.lofiTimer = setTimeout(playChordStep, 2800);
+      this.lofiTimer = setTimeout(playChordStep, 2900);
     };
 
     playChordStep();

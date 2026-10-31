@@ -139,20 +139,11 @@
       <ul class="nav-menu">
         <li><a href="#flagship" class="magnetic-element">Featured</a></li>
         <li><a href="#projects" class="magnetic-element">Projects</a></li>
-        <li><a href="#bento" class="magnetic-element">Stack &amp; Experience</a></li>
-        <li><a href="#github" class="magnetic-element">GitHub</a></li>
+        <li><a href="#bento" class="magnetic-element">Experience</a></li>
         <li><a href="#simulator" class="magnetic-element">Workbench</a></li>
-        <li><a href="#contact" class="magnetic-element">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
-        <!-- Command Palette Trigger (⌘K) -->
-        <button type="button" class="cmd-trigger-btn magnetic-element" data-open-cmd aria-label="Open Command Menu"
-          title="Press ⌘K or Ctrl+K">
-          <span class="cmd-icon-svg">⌘</span>
-          <span class="cmd-label">K</span>
-        </button>
-
         <!-- Ambient Lo-Fi Beats Toggle -->
         <button type="button" class="nav-icon-btn magnetic-element" id="lofiQuickToggle" onclick="window.toggleLoFiBeats?.()"
           title="Toggle Ambient Coding Synth">
@@ -641,23 +632,23 @@
     <!-- ◦ Ambient Lo-Fi Beats Widget ◦ -->
     <div class="section-container">
       <div class="lofi-widget glass reveal-up" id="lofiWidget">
-        <div class="lofi-disc" id="lofiVinylDisc" aria-hidden="true">
+        <div class="lofi-disc" id="lofiVinylDisc" aria-hidden="true" title="Click to Play / Pause">
           <div class="disc-groove"></div>
           <div class="disc-center"></div>
         </div>
         <div class="lofi-details">
           <div class="lofi-badge font-mono">
             <span class="lofi-eq-bars" id="lofiEqBars"><i></i><i></i><i></i><i></i></span>
-            <span id="lofiStatus">Ambient Lo-Fi Synth (Offline)</span>
+            <span id="lofiStatus">Ambient Lo-Fi Synth · Ready to Play</span>
           </div>
           <h3 class="lofi-title">Coding Atmosphere Synthesizer</h3>
-          <p class="lofi-desc">Procedural Web Audio synthesizer generating relaxing Rhodes electric chords and analog
-            pulses.</p>
+          <p class="lofi-desc">Procedural Web Audio synthesizer generating relaxing Rhodes electric chords and analog pulses.</p>
         </div>
-        <button type="button" class="btn btn-accent btn-sm" id="lofiPlayBtn">
+        <button type="button" class="btn btn-accent btn-lofi-play magnetic-element" id="lofiPlayBtn" aria-label="Toggle Lo-Fi Beats">
           <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor">
             <path d="M8 5v14l11-7z" />
           </svg>
+          <span>Play Lo-Fi Chords</span>
         </button>
       </div>
     </div>
@@ -733,23 +724,25 @@
         </div>
 
         <!-- Quick Contact Form -->
-        <form class="contact-form glass reveal-up" id="contactForm">
+        <form class="contact-form glass reveal-up" id="contactForm" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label for="contactName">Name</label>
-              <input type="text" id="contactName" required placeholder="Your Name" />
+              <input type="text" id="contactName" name="name" required placeholder="Your Name" autocomplete="name" />
             </div>
             <div class="form-group">
               <label for="contactEmail">Email</label>
-              <input type="email" id="contactEmail" required placeholder="you@company.com" />
+              <input type="email" id="contactEmail" name="email" required placeholder="you@company.com" autocomplete="email" />
             </div>
           </div>
           <div class="form-group">
             <label for="contactMessage">Message / Project Inquiry</label>
-            <textarea id="contactMessage" rows="4" required
+            <textarea id="contactMessage" name="message" rows="4" required
               placeholder="Tell me about the Android app, full-stack web project, or AI requirement..."></textarea>
           </div>
-          <button type="submit" class="btn btn-accent">Send Message 🚀</button>
+          <button type="submit" class="btn btn-accent magnetic-element" id="contactSubmitBtn">
+            <span>Send Message 🚀</span>
+          </button>
         </form>
 
         <!-- Social Media & Resume Links -->

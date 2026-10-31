@@ -2602,6 +2602,21 @@ h1, h2, h3, h4, p { margin: 0; }
   align-items: center;
   gap: 2rem;
   border: 1px solid var(--line);
+  transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.lofi-widget.is-playing {
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 0 45px rgba(16, 185, 129, 0.18);
+}
+.btn-lofi-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1.4rem;
+  white-space: nowrap;
+  font-family: var(--f-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
 }
 .lofi-disc {
   width: 4.8rem;
