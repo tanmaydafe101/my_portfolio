@@ -86,6 +86,32 @@
 
 <body>
 
+  <!-- ── 🎬 Cinematic Intro Screen (First-visit overlay) ──────────────── -->
+  <aside class="cinema-intro-screen play" id="cinemaIntroScreen" role="dialog" aria-modal="true" aria-label="Cinematic developer portfolio introduction">
+    <div class="cinema-grid" aria-hidden="true"></div>
+    <div class="cinema-vignette" aria-hidden="true"></div>
+    <div class="cinema-scan-line" aria-hidden="true"></div>
+
+    <div class="cinema-hero">
+      <p class="cinema-eyebrow font-mono">HELLO, I'M</p>
+      <div class="cinema-name-wrap">
+        <h1 class="cinema-name">TANMAY DAFE</h1>
+      </div>
+      <p class="cinema-title font-mono">FULL-STACK ANDROID DEVELOPER · WEB DEVELOPER · ASPIRING AI ENGINEER</p>
+      <div class="cinema-rule" aria-hidden="true"></div>
+      <div class="cinema-actions">
+        <button type="button" class="cinema-enter-btn magnetic-element" id="cinemaEnterBtn" aria-label="Explore Portfolio">
+          <span>Explore Portfolio</span>
+          <svg viewBox="0 0 24 24" class="cinema-arrow-svg" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 5v14m0 0l-6-6m6 6l6-6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="cinema-corner-mark font-mono" aria-hidden="true">BUILDING · LEARNING · CREATING</div>
+  </aside>
+
   <!-- High-End Film Grain Canvas Overlay (Awwwards / Apple Cinematic feel) -->
   <div class="luxury-grain-overlay" aria-hidden="true"></div>
 
@@ -161,12 +187,9 @@
   <!-- ── Main Content ────────────────────────────────────────────────── -->
   <main>
 
-    <!-- ◦ Hero Section (Cinematic Reveal) ◦ -->
-    <section id="hero" class="hero-section cinematic-scene play" aria-labelledby="heroName">
+    <!-- ◦ Hero Section ◦ -->
+    <section id="hero" class="hero-section">
       <div class="hero-glow-ambient" aria-hidden="true"></div>
-      <div class="cinema-grid" aria-hidden="true"></div>
-      <div class="cinema-vignette" aria-hidden="true"></div>
-      <div class="cinema-scan-line" aria-hidden="true"></div>
 
       <div class="hero-inner">
         <!-- Luxury Status Pill with Edge Ping -->
@@ -184,27 +207,15 @@
           </div>
         </div>
 
-        <p class="cinema-eyebrow font-mono">
-          HELLO, I'M
+        <p class="hero-kicker font-mono">
+          <span class="kicker-tag" id="heroKickerText">Tanmay Dafe · Full-Stack Engineer (Android · Web · AI)</span>
         </p>
 
-        <!-- Cinematic Headline Name with Reveal, Sharpen & Shine -->
-        <div class="cinema-name-wrap">
-          <h1 class="cinema-name" id="heroName">TANMAY DAFE</h1>
-        </div>
-
-        <!-- Cinematic Subtitle Title -->
-        <p class="cinema-title font-mono">
-          FULL-STACK ANDROID DEVELOPER · WEB DEVELOPER · ASPIRING AI ENGINEER
-        </p>
-
-        <!-- Glowing Laser Horizon Rule -->
-        <div class="cinema-rule" aria-hidden="true"></div>
-
-        <!-- Dynamic Architecture Rotator Line -->
-        <p class="cinema-rotator-line font-mono">
-          I architect scalable <span class="rotator-container"><em class="rot-word" id="rotWord">Android apps.</em></span>
-        </p>
+        <h1 class="hero-title">
+          <span class="hero-line">Hi, I'm <span class="text-luxury-shimmer" id="heroName">Tanmay</span>.</span>
+          <span class="hero-line">I architect scalable <span class="rotator-container"><em class="rot-word"
+                id="rotWord">Android apps.</em></span></span>
+        </h1>
 
         <p class="hero-bio" id="heroBio">
           B.Tech Information Technology student at St. Vincent Pallotti College of Engineering &amp; Technology, Nagpur
@@ -228,9 +239,6 @@
             </svg>
             Resume (PDF)
           </a>
-          <button type="button" class="btn btn-replay font-mono magnetic-element" id="replayHeroCinema" aria-label="Replay introduction animation" title="Replay Cinematic Intro">
-            <span class="replay-icon" aria-hidden="true">↻</span> Replay Intro
-          </button>
         </div>
 
         <!-- Real-Time Telemetry Bar -->
@@ -250,8 +258,6 @@
             <span class="telem-val">SVPCET · CGPA 8+ </span>
           </div>
         </div>
-
-        <div class="cinema-corner-mark font-mono" aria-hidden="true">BUILDING · LEARNING · CREATING</div>
       </div>
     </section>
 

@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initScrollAnimations();
   initLuxuryInteractions();
-  initCinematicHero();
+  initCinematicIntro();
   document.body.classList.add('ready');
 });
 
@@ -81,13 +81,7 @@ function populateHeroAndMeta() {
   if (brandName) brandName.textContent = CONFIG.name;
 
   const heroName = document.getElementById('heroName');
-  if (heroName) {
-    if (heroName.classList.contains('cinema-name')) {
-      heroName.textContent = CONFIG.name.toUpperCase();
-    } else {
-      heroName.textContent = CONFIG.firstName;
-    }
-  }
+  if (heroName) heroName.textContent = CONFIG.firstName;
 
   const heroKicker = document.getElementById('heroKickerText');
   if (heroKicker) heroKicker.textContent = `${CONFIG.name} · ${CONFIG.role}`;
@@ -99,32 +93,55 @@ function populateHeroAndMeta() {
   if (statusBadge) statusBadge.textContent = CONFIG.statusBadge;
 }
 
-// ── Cinematic Hero Controller (tanmay_dafe_cinematic_hero) ─────────────
-function initCinematicHero() {
-  const heroScene = document.getElementById('hero');
-  const replayBtn = document.getElementById('replayHeroCinema');
-  if (!heroScene) return;
+// ── 🎬 Cinematic Intro Screen Controller ──────────────────────────────
+function initCinematicIntro() {
+  const introScreen = document.getElementById('cinemaIntroScreen');
+  const enterBtn = document.getElementById('cinemaEnterBtn');
+  if (!introScreen) return;
 
-  function replayAnimation() {
-    heroScene.classList.remove('play');
-    void heroScene.offsetWidth; // Force CSS reflow
-    heroScene.classList.add('play');
-    try { sound?.playClick?.(); } catch (e) {}
-  }
-
-  if (replayBtn) {
-    replayBtn.addEventListener('click', replayAnimation);
-  }
-
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (reducedMotion.matches) {
-    heroScene.classList.add('play');
-  } else {
-    // Smooth initial trigger
+  function dismissIntro() {
+    if (introScreen.classList.contains('is-dismissed')) return;
+    introScreen.classList.add('is-dismissed');
+    try { sound?.playChime?.(); } catch (e) {}
     setTimeout(() => {
-      heroScene.classList.add('play');
-    }, 120);
+      introScreen.style.display = 'none';
+    }, 850);
   }
+
+  if (enterBtn) {
+    enterBtn.addEventListener('click', dismissIntro);
+  }
+
+  // Dismiss on mouse wheel scroll
+  window.addEventListener('wheel', (e) => {
+    if (e.deltaY > 15 && !introScreen.classList.contains('is-dismissed')) {
+      dismissIntro();
+    }
+  }, { passive: true });
+
+  // Dismiss on keys (Enter, Space, Escape, Down arrow)
+  window.addEventListener('keydown', (e) => {
+    if ((e.key === 'Enter' || e.key === ' ' || e.key === 'Escape' || e.key === 'ArrowDown') && !introScreen.classList.contains('is-dismissed')) {
+      dismissIntro();
+    }
+  });
+
+  // Dismiss on touch swipe up on mobile
+  let touchStartY = 0;
+  window.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches[0]) {
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchend', (e) => {
+    if (e.changedTouches && e.changedTouches[0]) {
+      const touchEndY = e.changedTouches[0].clientY;
+      if (touchStartY - touchEndY > 40 && !introScreen.classList.contains('is-dismissed')) {
+        dismissIntro();
+      }
+    }
+  }, { passive: true });
 }
 
 // ── Hero Rotator Words ────────────────────────────────────────────────
