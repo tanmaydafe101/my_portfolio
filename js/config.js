@@ -21,7 +21,7 @@ export const CONFIG = {
   phone: "+91 9175181390",
   email: "tanmaydafe855@gmail.com",
   statusBadge: "Available for Android, Full-Stack & AI Roles",
-  githubUrl: "https://github.com/",
+  githubUrl: "https://github.com/tanmaydafe101",
   linkedinUrl: "https://linkedin.com/",
   resumeUrl: "/Tanmay_Dafe_Resume.pdf",
   avatarUrl: "/img/avatar.jpg",

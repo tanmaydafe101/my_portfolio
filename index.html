@@ -161,9 +161,12 @@
   <!-- ── Main Content ────────────────────────────────────────────────── -->
   <main>
 
-    <!-- ◦ Hero Section ◦ -->
-    <section id="hero" class="hero-section">
+    <!-- ◦ Hero Section (Cinematic Reveal) ◦ -->
+    <section id="hero" class="hero-section cinematic-scene play" aria-labelledby="heroName">
       <div class="hero-glow-ambient" aria-hidden="true"></div>
+      <div class="cinema-grid" aria-hidden="true"></div>
+      <div class="cinema-vignette" aria-hidden="true"></div>
+      <div class="cinema-scan-line" aria-hidden="true"></div>
 
       <div class="hero-inner">
         <!-- Luxury Status Pill with Edge Ping -->
@@ -181,15 +184,27 @@
           </div>
         </div>
 
-        <p class="hero-kicker font-mono">
-          <span class="kicker-tag" id="heroKickerText">Tanmay Dafe · Full-Stack Engineer (Android · Web · AI)</span>
+        <p class="cinema-eyebrow font-mono">
+          HELLO, I'M
         </p>
 
-        <h1 class="hero-title">
-          <span class="hero-line">Hi, I'm <span class="text-luxury-shimmer" id="heroName">Tanmay</span>.</span>
-          <span class="hero-line">I architect scalable <span class="rotator-container"><em class="rot-word"
-                id="rotWord">Android apps.</em></span></span>
-        </h1>
+        <!-- Cinematic Headline Name with Reveal, Sharpen & Shine -->
+        <div class="cinema-name-wrap">
+          <h1 class="cinema-name" id="heroName">TANMAY DAFE</h1>
+        </div>
+
+        <!-- Cinematic Subtitle Title -->
+        <p class="cinema-title font-mono">
+          FULL-STACK ANDROID DEVELOPER · WEB DEVELOPER · ASPIRING AI ENGINEER
+        </p>
+
+        <!-- Glowing Laser Horizon Rule -->
+        <div class="cinema-rule" aria-hidden="true"></div>
+
+        <!-- Dynamic Architecture Rotator Line -->
+        <p class="cinema-rotator-line font-mono">
+          I architect scalable <span class="rotator-container"><em class="rot-word" id="rotWord">Android apps.</em></span>
+        </p>
 
         <p class="hero-bio" id="heroBio">
           B.Tech Information Technology student at St. Vincent Pallotti College of Engineering &amp; Technology, Nagpur
@@ -207,12 +222,15 @@
             <span class="pulse-dot"></span> Visit smartcampus.site ↗
           </a>
           <a href="#simulator" class="btn btn-glass magnetic-element">Interactive Workbench 💻</a>
-          <a href="/Tanmay_Dafe_Resume.pdf" download="Tanmay_Dafe_Resume.pdf" class="btn btn-ghost font-mono magnetic-element">
+          <a href="/Tanmay_Dafe_Resume.pdf" download="Tanmay_Dafe_Resume.pdf" class="btn btn-ghost font-mono magnetic-element" title="Download Updated Resume (PDF)">
             <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 4v12m0 0-4-4m4 4 4-4M4 20h16" />
             </svg>
             Resume (PDF)
           </a>
+          <button type="button" class="btn btn-replay font-mono magnetic-element" id="replayHeroCinema" aria-label="Replay introduction animation" title="Replay Cinematic Intro">
+            <span class="replay-icon" aria-hidden="true">↻</span> Replay Intro
+          </button>
         </div>
 
         <!-- Real-Time Telemetry Bar -->
@@ -232,6 +250,8 @@
             <span class="telem-val">SVPCET · CGPA 8+ </span>
           </div>
         </div>
+
+        <div class="cinema-corner-mark font-mono" aria-hidden="true">BUILDING · LEARNING · CREATING</div>
       </div>
     </section>
 
@@ -550,7 +570,7 @@
             </div>
           </div>
           <div class="gh-tooltip font-mono" id="ghTooltip">Hover over any square to inspect commits</div>
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm">
+          <a href="https://github.com/tanmaydafe101" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm">
             Follow on GitHub ↗
           </a>
         </div>
@@ -732,7 +752,7 @@
           <a href="mailto:tanmaydafe855@gmail.com">Email ↗</a>
           <a href="tel:+919175181390">Call ↗</a>
           <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://github.com/tanmaydafe101" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           <a href="/Tanmay_Dafe_Resume.pdf" download="Tanmay_Dafe_Resume.pdf">Resume (PDF) ↗</a>
         </div>
 

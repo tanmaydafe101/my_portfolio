@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initScrollAnimations();
   initLuxuryInteractions();
+  initCinematicHero();
   document.body.classList.add('ready');
 });
 
@@ -80,7 +81,13 @@ function populateHeroAndMeta() {
   if (brandName) brandName.textContent = CONFIG.name;
 
   const heroName = document.getElementById('heroName');
-  if (heroName) heroName.textContent = CONFIG.firstName;
+  if (heroName) {
+    if (heroName.classList.contains('cinema-name')) {
+      heroName.textContent = CONFIG.name.toUpperCase();
+    } else {
+      heroName.textContent = CONFIG.firstName;
+    }
+  }
 
   const heroKicker = document.getElementById('heroKickerText');
   if (heroKicker) heroKicker.textContent = `${CONFIG.name} · ${CONFIG.role}`;
@@ -90,6 +97,34 @@ function populateHeroAndMeta() {
 
   const statusBadge = document.getElementById('heroStatusBadge');
   if (statusBadge) statusBadge.textContent = CONFIG.statusBadge;
+}
+
+// ── Cinematic Hero Controller (tanmay_dafe_cinematic_hero) ─────────────
+function initCinematicHero() {
+  const heroScene = document.getElementById('hero');
+  const replayBtn = document.getElementById('replayHeroCinema');
+  if (!heroScene) return;
+
+  function replayAnimation() {
+    heroScene.classList.remove('play');
+    void heroScene.offsetWidth; // Force CSS reflow
+    heroScene.classList.add('play');
+    try { sound?.playClick?.(); } catch (e) {}
+  }
+
+  if (replayBtn) {
+    replayBtn.addEventListener('click', replayAnimation);
+  }
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reducedMotion.matches) {
+    heroScene.classList.add('play');
+  } else {
+    // Smooth initial trigger
+    setTimeout(() => {
+      heroScene.classList.add('play');
+    }, 120);
+  }
 }
 
 // ── Hero Rotator Words ────────────────────────────────────────────────
